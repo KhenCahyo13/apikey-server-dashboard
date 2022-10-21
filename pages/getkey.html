@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APIKEY - SERVER</title>
+    <link rel="stylesheet" href="../dist/output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/255fd51aa4.js" crossorigin="anonymous"></script>
+    <script>
+        // Load Local Storage Theme
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark')
+        } else {
+        document.documentElement.classList.remove('dark')
+        }
+    </script>
+</head>
+<body class="bg-gray-100 text-slate-500 dark:bg-gray-800 dark:text-gray-100">
+    <!-- SideNav Background When Click -->
+    <div class="" id="sideNavBackground"></div>
+    <!-- Sidebar -->
+    <aside >
+        <div class="sideNav-container" id="sideNavMenu">
+            <a href="#" class="sideNav-brand"><h1>APIKEY-SERVER</h1></a>
+            <div class="hide-button">
+                <a href="#" id="hideNavMenu"><i class="fa-solid fa-xmark"></i></a>
+            </div>
+            <hr class="mt-2">
+            <div class="mt-6" id="sideMenu">
+                <ul>
+                    <li class="sideNav-menu active"><a href="./dashboard.html"><i class="mr-4 text-lg fa-solid fa-home"></i>Dashboard</a></li>
+                    <li class="p-4 mt-2 sideNav-menu"><a href="./getkey.html"><i class="mr-4 text-lg fa-solid fa-key"></i>Get Key</a></li>
+                    <li class="p-4 mt-2 sideNav-menu"><a href="./setting.html"><i class="mr-4 text-lg fa-solid fa-gear"></i>Setting</a></li>
+                    <li class="p-4 mt-2 hover:cursor-pointer sideNav-menu" id="themeDropdown"><i class="mr-4 text-lg fa-solid fa-sun"></i>Theme<i class="ml-4 fa-solid fa-caret-down transition duration-300" id="dropdownIcon"></i></li>
+                    <ul class="bg-white shadow-md rounded md px-4 py-2 transition duration-300 -translate-y-4 opacity-0 dark:bg-gray-900 dark:shadow-2xl" id="themeMenu">
+                        <li class="theme-menu" id="darkMode"><i class="fa-solid fa-moon mr-4"></i>Dark Mode</li>
+                        <li class="mt-2 theme-menu" id="lightMode"><i class="fa-solid fa-sun mr-4"></i>Light Mode</li>
+                        <li class="mt-2 theme-menu" id="systemMode"><i class="fa-solid fa-desktop mr-4"></i>System Mode</li>
+                    </ul>
+                </ul>
+            </div>
+        </div>
+    </aside>
+    <main>
+        <!-- SideNav Menu Button And Profile User Section -->
+        <section class="header-section">
+            <!-- Menu Button -->
+            <div class="text-2xl lg:hidden">
+                <a href="#" id="showNavMenu"><i class="fa-solid fa-bars"></i></a>
+            </div>
+            <a href="#" id="profileUser">
+                <img src="../src/img/chaeyoung.jpg" class="rounded-full w-11" alt="User Profile" id="btnProfileMenu">
+            </a>
+        </section>
+
+        <!-- Profile Menu -->
+        <div class="bg-white rounded-md mt-2 mx-4 px-6 py-4 shadow-md  transition duration-300 ease-in-out w-[91%] absolute profileMenu-hide md:w-[50%] lg:left-[67%] lg:w-[30%] dark:bg-gray-900 dark:shadow-2xl" id="profileMenu">
+            <div class="flex items-center">
+                <div class="p-4 w-full hover:cursor-pointer hover:bg-blue-400 hover:bg-opacity-10 hover:rounded-md flex">
+                    <img src="../src/img/chaeyoung.jpg" class="w-14 rounded-full" alt="">
+                    <div class="block ml-4">
+                        <h1 class="font-bold text-lg text-gray-500 dark:text-gray-200">Khen Cahyo</h1>
+                        <p class="text-gray-400 dark:text-gray-300">Member</p>
+                    </div>  
+                </div>
+            </div>
+            <hr class="mt-2 w-full">
+            <div class="block mt-2">
+                <ul>
+                    <li class="profile-menu"><a href="#"><i class="mr-4 fa-solid fa-key"></i>Get Key</a></li>
+                    <li class="profile-menu"><a href="#"><i class="mr-4 mt-2 fa-solid fa-gear"></i>Setting</a></li>
+                    <li><a href=""></a></li>    
+                    <hr class="mt-2 w-full">
+                    <li class="profile-menu"><a href="#"><i class="mr-4 fa-solid fa-power-off my-2"></i>Logout</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="lg:flex lg:ml-[19rem] lg:my-8">
+            <!-- Profile Information Section -->
+            <section class="profile-section">
+                <div class="mx-auto w-20">
+                    <img class="rounded-full" src="../src/img/chaeyoung.jpg" alt="User Image">
+                </div>
+                <div class="mt-4">
+                    <h1 class="profile-name">Khen Cahyo</h1>
+                    <div class="flex justify-center items-center mt-2">
+                        <div class="bg-green-300 bg-opacity-30 px-2 py-1 rounded-md">
+                            <h1 class="text-green-400 font-bold text-sm lg:text-xs">PREMIUM</h1>
+                        </div>
+                        <div class="bg-orange-300 bg-opacity-30 px-2 py-1 ml-3 rounded-md">
+                            <h1 class="text-orange-400 font-bold text-sm lg:text-xs">6 HARI LAGI</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="information">
+                    <div class="flex justify-between">
+                        <p class="dark:text-gray-200 lg:text-sm">Joined :</p>
+                        <h1 class="font-semibold dark:text-gray-200 lg:text-sm">19 Oktober 2022</h1>
+                    </div>
+                    <hr class="my-4">
+                    <div class="flex justify-between">
+                        <p class="dark:text-gray-200 lg:text-sm">Expired :</p>
+                        <h1 class="font-semibold dark:text-gray-200 lg:text-sm">27 Oktober 2022</h1>
+                    </div>
+                    <hr class="my-4">
+                    <div class="flex justify-between">
+                        <p class="dark:text-gray-200 lg:text-sm">Max Device :</p>
+                        <h1 class="font-semibold text-center dark:text-gray-200 lg:text-sm">1</h1>
+                    </div>
+                </div>
+            </section>
+
+            <div class="md:flex">
+            <!-- Acces Section -->
+            <section class="acces-section">
+                <h1 class="text-lg font-semibold dark:text-gray-200">API Key & Access</h1>
+                <p class="text-sm mt-4 mb-4 dark:text-gray-300">Jangan Memberikan apikey anda kepada siapapun, admin tidak bertanggung jawab jika apikey anda tidak bisa dipakai di device yang anda punya</p>
+                <div class="bg-blue-400 bg-opacity-10 p-4 rounded-md">
+                    <div class="bg-blue-500 bg-opacity-10 rounded-md px-2 py-1 w-[80%]">
+                        <h1 class="text-xs text-center text-blue-600 font-semibold">SALIN DAN TEMPEL KE TOOLS</h1>
+                    </div>
+                    <h1 class="mt-4 text-[15x] font-semibold dark:text-gray-200">6424ff-3842be-89d578-c124778-aac517</h1>
+                    <h1 class="mt-4 text-[15px] font-medium text-gray-400 dark:text-gray-300">Expired on 27 October 2022</h1>
+                </div>
+            </section>
+
+            <!-- Log Section -->
+            <section class="log-section">
+                <h1 class="text-lg font-semibold dark:text-gray-200">Log Aktivitas Key</h1>
+                <hr class="mt-6 h-2">
+                <div class="flex items-center">
+                    <div class="w-[50%]">
+                        <h1 class="dark:text-gray-200">No</h1>
+                    </div>
+                    <div class="w-[50%]">
+                        <h1 class="dark:text-gray-200">Type</h1>
+                    </div>
+                </div>
+                <hr class="mt-2 mb-4 h-2">
+                <div class="bg-red-400 bg-opacity-20 px-5 pt-4 pb-6 rounded-md">
+                    <h1 class="font-semibold text-red-400 text-sm">Apikey anda belum pernah terkait di device manapun</h1>
+                </div>
+            </section>
+            </div>
+        </div>
+        <!-- Footer Section -->
+        <section class="mb-4 mt-16 md:fixed md:bottom-0 md:left-[30%] lg:left-[50%]">
+            <p class="text-center text-sm text-light dark:text-gray-200">	&#169; 2022. Simple Dashboard Template by KhenCahyo</p>
+        </section>
+    </main>
+
+    <script src="../src/js/script.js"></script>
+</body>
+</html>
